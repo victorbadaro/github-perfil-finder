@@ -1,14 +1,21 @@
-const inputCEP = document.querySelector('input[name=cep]')
+const inputGithubUsername = document.querySelector('input[name=github-username]')
+const buttonSearch = document.querySelector('button')
 
-$(inputCEP).mask('00000-000')
+buttonSearch.addEventListener('click', () => {
+    const githubUsername = inputGithubUsername.value
 
-inputCEP.addEventListener('input', function() {
-    if(this.value.length === 9)
-        axios.get(`https://viacep.com.br/ws/${this.value}/json/`)
-            .then(function(response) {
-                console.log(response.data)
+    if(githubUsername) {
+        NProgress.start()
+        axios.get(`https://api.github.com/users/${githubUsername}`)
+            .then(response => {
+                console.log(response)
             })
-            .catch(function(error) {
-                console.warn(error)
+            .catch(error => {
+                console.log(error)
             })
+            .then(() => {
+                NProgress.done()
+            })
+    } else
+        console.log('Digite um usuário do Github')
 })
