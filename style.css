@@ -1,0 +1,72 @@
+body {
+    background-color: #111;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100vh;
+}
+
+input.form-control {
+    background-color: #000;
+}
+
+input.form-control:focus {
+    background-color: #000;
+    color: #E3F363;
+}
+
+.content {
+    margin-top: 50px;
+    padding-right: 16px;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #282A36;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #F770C0;
+}
+
+.content div {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #000;
+    color: #B28BF2;
+}
+
+.content div + div {
+    margin-top: 8px;
+}
+
+.content div img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.content div section a {
+    color: #E3F363;
+}
